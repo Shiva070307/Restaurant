@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="Assets_of_Restro/logo2.png" alt="Restaurant logo featuring a chef hat above elegant script text Restro in a warm and welcoming style, set against a cozy restaurant-themed background">
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reservation">Reserve Table</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><button id="loginBtn" class="nav-login-btn">Login</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to MasterChef</h1>
+            <p>Experience the finest dining with us</p>
+        </div>
+    </div>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-category">
+            <h3 class="indian-heading">Indian</h3>
+            <h4 class="veg-heading">Veg</h4>
+            <div class="menu-container" id="indian-veg-menu"></div>
+            <h4 class="nonveg-heading">Non-Veg</h4>
+            <div class="menu-container" id="indian-nonveg-menu"></div>
+        </div>
+        <div class="menu-category">
+            <h3 class="chinese-heading">Chinese</h3>
+            <h4 class="veg-heading">Veg</h4>
+            <div class="menu-container" id="chinese-veg-menu"></div>
+            <h4 class="nonveg-heading">Non-Veg</h4>
+            <div class="menu-container" id="chinese-nonveg-menu"></div>
+        </div>
+    </section>
+
+    <section id="reservation">
+        <h2>Reserve a Table</h2>
+        <div class="reservation-wrapper">
+            <form id="reservationForm">
+                <div class="input-group">
+                    <label for="name"><span>👤</span> Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <label for="mobile"><span>📱</span> Mobile Number</label>
+                    <input type="tel" id="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10,15}" required>
+                </div>
+                <div class="input-group">
+                    <label for="address"><span>🏠</span> Address</label>
+                    <input type="text" id="address" placeholder="Enter your address" required>
+                </div>
+                <div class="input-group">
+                    <label for="persons"><span>👥</span> Number of Persons</label>
+                    <input type="number" id="persons" min="1" max="20" value="1" required>
+                </div>
+                <div class="input-group">
+                    <label for="date"><span>📅</span> Date & Time</label>
+                    <input type="datetime-local" id="date" required>
+                </div>
+                <button type="submit">Book Now</button>
+            </form>
+            <p id="confirmationMessage"></p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-wrapper">
+            <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <a class="contact-text" href="mailto:shiva.jaiswal.official@gmail.com">shiva.jaiswal.official@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <a class="contact-text" href="tel:+919876543210">+91 98765 43210</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-wrapper">
+            <img src="Assets_of_Restro/aboutus.jpg" alt="Our Team" class="about-img">
+            <div class="about-text">
+                <p>
+                    <span class="about-highlight">Welcome to <strong>MasterChef</strong></span> – your destination for a delicious variety of Indian, Chinese, and continental cuisine!
+                </p>
+                <ul>
+                    <li>🇮🇳 <strong>Indian Favourites:</strong> Paneer Butter Masala, Dal Makhani, Butter Naan, Chicken Tikka and more</li>
+                    <li>🥢 <strong>Chinese Delights:</strong> Veg Manchurian, Hakka Noodles, Chilli Paneer, Spring Rolls, Chicken Lollipop, Schezwan Fried Rice</li>
+                    <li>🍕 <strong>Continental Treats:</strong> Pizza, Pasta, Salad, Soup</li>
+                </ul>
+                <p>
+                    Our chefs use the freshest ingredients and authentic recipes to bring you the best of every cuisine. Whether you crave spicy Indian curries, classic Chinese street food, or comforting continental dishes, we have something for everyone!
+                </p>
+                <p>
+                    <span class="about-highlight">Join us for a memorable dining experience with family and friends. At MasterChef, every meal is a celebration!</span>
+                </p>
+                <p class="about-signoff">We look forward to serving you! 🍽️</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>"The food was amazing and the service was top-notch!"</p>
+                <p>- Jane Doe</p>
+            </div>
+            <div class="testimonial">
+                <p>"A wonderful dining experience. Highly recommend!"</p>
+                <p>- John Smith</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+        <!-- Add this just before </body> -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeOrderModal">&times;</span>
+            <img id="orderProductImg" src="" alt="Product Image" class="order-modal-img">
+            <h2 id="orderProductName">Order</h2>
+            <form id="orderForm">
+                <input type="hidden" id="orderProduct">
+                <div>
+                    <label for="orderName">Your Name:</label>
+                    <input type="text" id="orderName" required>
+                </div>
+                <div>
+                    <label for="orderMobile">Mobile Number:</label>
+                    <input type="tel" id="orderMobile" pattern="[0-9]{10,15}" placeholder="Enter your mobile number" required>
+                </div>
+                <div>
+                    <label for="orderAltMobile">Alternate Mobile Number:</label>
+                    <input type="tel" id="orderAltMobile" pattern="[0-9]{10,15}" placeholder="Enter alternate mobile number">
+                </div>
+                <div>
+                    <label for="orderAddress">Full Address:</label>
+                    <input type="text" id="orderAddress" placeholder="Enter your full address" required>
+                </div>
+                <div>
+                    <label for="orderQty">Quantity:</label>
+                    <input type="number" id="orderQty" min="1" value="1" required>
+                </div>
+                <button type="submit">Place Order</button>
+            </form>
+            <p id="orderConfirmation"></p>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+    <div class="modal-content login-modal-content">
+        <span class="close-btn" id="closeLoginModal">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div>
+                <label for="loginEmailPhone">Phone or Email:</label>
+                <input type="text" id="loginEmailPhone" required placeholder="Enter phone or email">
+            </div>
+            <div>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" required placeholder="Enter password">
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <button id="showCreateAccount" class="link-btn">Create Account</button>
+        <p id="loginMessage"></p>
+    </div>
+</div>
+
+<div id="createAccountModal" class="modal">
+    <div class="modal-content login-modal-content">
+        <span class="close-btn" id="closeCreateAccountModal">&times;</span>
+        <h2>Create Account</h2>
+        <form id="createAccountForm">
+            <div>
+                <label for="signupName">Name:</label>
+                <input type="text" id="signupName" required placeholder="Your Name">
+            </div>
+            <div>
+                <label for="signupPhone">Phone Number:</label>
+                <input type="tel" id="signupPhone" required pattern="[0-9]{10,15}" placeholder="Your Phone Number">
+            </div>
+            <div>
+                <label for="signupEmail">Email:</label>
+                <input type="email" id="signupEmail" required placeholder="Your Email">
+            </div>
+            <div>
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" required placeholder="Create Password">
+            </div>
+            <button type="submit">Create Account</button>
+        </form>
+        <p id="signupMessage"></p>
+    </div>
+</div>
+</body>
+</html>

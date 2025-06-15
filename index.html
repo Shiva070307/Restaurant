@@ -41,16 +41,24 @@
         <div class="menu-category">
             <h3 class="indian-heading">Indian</h3>
             <h4 class="veg-heading">Veg</h4>
-            <div class="menu-container" id="indian-veg-menu"></div>
+            <div id="indian-veg-menu"></div>
             <h4 class="nonveg-heading">Non-Veg</h4>
-            <div class="menu-container" id="indian-nonveg-menu"></div>
+            <div id="indian-nonveg-menu"></div>
         </div>
         <div class="menu-category">
             <h3 class="chinese-heading">Chinese</h3>
             <h4 class="veg-heading">Veg</h4>
-            <div class="menu-container" id="chinese-veg-menu"></div>
+            <div id="chinese-veg-menu"></div>
             <h4 class="nonveg-heading">Non-Veg</h4>
-            <div class="menu-container" id="chinese-nonveg-menu"></div>
+            <div id="chinese-nonveg-menu"></div>
+        </div>
+        <div class="menu-category">
+            <h3 class="continental-heading">Continental</h3>
+            <div id="continental-menu"></div>
+        </div>
+        <div class="menu-category">
+            <h3 class="drinks-heading">Drinks</h3>
+            <div id="drinks-menu"></div>
         </div>
     </section>
 
@@ -177,12 +185,12 @@
         <h2>Login</h2>
         <form id="loginForm">
             <div>
-                <label for="loginEmailPhone">Phone or Email:</label>
-                <input type="text" id="loginEmailPhone" required placeholder="Enter phone or email">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="username" required>
             </div>
             <div>
-                <label for="loginPassword">Password:</label>
-                <input type="password" id="loginPassword" required placeholder="Enter password">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
             </div>
             <button type="submit">Login</button>
         </form>
@@ -197,20 +205,24 @@
         <h2>Create Account</h2>
         <form id="createAccountForm">
             <div>
-                <label for="signupName">Name:</label>
-                <input type="text" id="signupName" required placeholder="Your Name">
+                <label for="signup-name">Name:</label>
+                <input type="text" id="signup-name" name="name" required>
             </div>
             <div>
-                <label for="signupPhone">Phone Number:</label>
-                <input type="tel" id="signupPhone" required pattern="[0-9]{10,15}" placeholder="Your Phone Number">
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" name="username" required>
             </div>
             <div>
-                <label for="signupEmail">Email:</label>
-                <input type="email" id="signupEmail" required placeholder="Your Email">
+                <label for="signup-mobile">Mobile Number:</label>
+                <input type="tel" id="signup-mobile" name="mobile" pattern="[0-9]{10}" required>
             </div>
             <div>
-                <label for="signupPassword">Password:</label>
-                <input type="password" id="signupPassword" required placeholder="Create Password">
+                <label for="signup-address">Address:</label>
+                <input type="text" id="signup-address" name="address" required>
+            </div>
+            <div>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="password" required>
             </div>
             <button type="submit">Create Account</button>
         </form>
